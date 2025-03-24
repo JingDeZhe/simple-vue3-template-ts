@@ -1,8 +1,14 @@
-import { defineConfig, presetUno, presetIcons, transformerCompileClass, transformerDirectives } from 'unocss'
+import {
+  defineConfig,
+  presetWind3,
+  presetIcons,
+  transformerVariantGroup,
+  transformerDirectives,
+} from 'unocss'
 
 export default defineConfig({
   presets: [
-    presetUno(),
+    presetWind3(),
     presetIcons({
       extraProperties: {
         display: 'inline-block',
@@ -10,13 +16,14 @@ export default defineConfig({
       },
     }),
   ],
-  transformers: [transformerDirectives(), transformerCompileClass()],
+  transformers: [transformerDirectives(), transformerVariantGroup()],
   theme: {
     colors: {},
   },
   safelist: getSafeList(),
 })
 
+/**注意safe list如果是依赖其他文件动态生成的，实际上只有启动的时候生效一次 */
 function getSafeList() {
-  return ['i-tabler-photo-down', 'i-tabler-printer', 'i-tabler-copy']
+  return []
 }
