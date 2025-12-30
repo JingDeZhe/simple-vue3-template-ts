@@ -1,6 +1,0 @@
-/dist/
-/build/
-/node_modules/
-
-auto-imports.d.ts
-components.d.ts
