@@ -8,7 +8,9 @@ const THEME_STORAGE_KEY = 'simple-vue3-template-theme'
 const themeMode = ref<ThemeMode>(getInitialThemeMode())
 
 const isDark = computed(() => themeMode.value === 'dark')
-const naiveTheme = computed<GlobalTheme | null>(() => (isDark.value ? darkTheme : null))
+const naiveTheme = computed<GlobalTheme | null>(() =>
+  isDark.value ? darkTheme : null,
+)
 
 function getInitialThemeMode(): ThemeMode {
   if (typeof window === 'undefined') {
@@ -21,7 +23,9 @@ function getInitialThemeMode(): ThemeMode {
     return storedTheme
   }
 
-  return window.matchMedia?.('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+  return window.matchMedia?.('(prefers-color-scheme: dark)').matches
+    ? 'dark'
+    : 'light'
 }
 
 function setTheme(mode: ThemeMode) {

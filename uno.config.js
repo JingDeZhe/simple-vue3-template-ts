@@ -17,13 +17,5 @@ export default defineConfig({
     }),
   ],
   transformers: [transformerDirectives(), transformerVariantGroup()],
-  theme: {
-    colors: {},
-  },
-  safelist: getSafeList(),
+  safelist: [],
 })
-
-/**注意safe list如果是依赖其他文件动态生成的，实际上只有启动的时候生效一次 */
-function getSafeList() {
-  return []
-}

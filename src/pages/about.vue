@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { NButton, NSpace } from 'naive-ui'
+
 const highlights = [
   {
     value: 'Vue 3',

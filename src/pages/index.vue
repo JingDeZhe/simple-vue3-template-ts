@@ -1,8 +1,18 @@
 <script setup lang="ts">
-const { isDark, toggleTheme } = useTheme()
-const { message } = useNaive()
+import { NButton, NCard, NDivider, NGradientText, NSpace, NTag } from 'naive-ui'
+import { useTheme } from '@/composables'
 
-const stacks = ['Vue 3', 'TypeScript', 'Vite', 'Pinia', 'UnoCSS', 'Naive UI', 'Vue Router 5']
+const { isDark, toggleTheme } = useTheme()
+
+const stacks = [
+  'Vue 3',
+  'TypeScript',
+  'Vite',
+  'Pinia',
+  'UnoCSS',
+  'Naive UI',
+  'Vue Router 5',
+]
 
 const features = [
   {
@@ -18,12 +28,12 @@ const features = [
   {
     icon: 'i-tabler-bolt',
     title: 'Fast DX',
-    description: '自动导入、组件解析和 typed routes 已开箱配置。',
+    description: '保留 typed routes 与清晰的显式导入，避免模板过度封装。',
   },
 ]
 
 function showMessage() {
-  message.success('Naive UI message 已经可用。')
+  window.$message.success('Naive UI message 已经可用。')
 }
 </script>
 
@@ -43,13 +53,12 @@ function showMessage() {
 
             <h1>
               Build Vue apps with
-              <n-gradient-text type="info">
-                less boilerplate
-              </n-gradient-text>
+              <n-gradient-text type="info"> less boilerplate </n-gradient-text>
             </h1>
 
             <p class="hero-description">
-              一个轻量的 Vue 3 + TypeScript 模板，集成 Naive UI、Pinia、UnoCSS 和 Vue Router 5 文件路由。
+              一个轻量的 Vue 3 + TypeScript 模板，集成 Naive UI、Pinia、UnoCSS
+              和 Vue Router 5 文件路由。
             </p>
 
             <n-space class="hero-actions" align="center">
@@ -61,7 +70,9 @@ function showMessage() {
               </n-button>
               <n-button size="large" secondary @click="toggleTheme">
                 <template #icon>
-                  <span :class="isDark ? 'i-tabler-sun' : 'i-tabler-moon'"></span>
+                  <span
+                    :class="isDark ? 'i-tabler-sun' : 'i-tabler-moon'"
+                  ></span>
                 </template>
                 {{ isDark ? 'Light Mode' : 'Dark Mode' }}
               </n-button>
@@ -79,9 +90,7 @@ function showMessage() {
               <span></span>
             </div>
             <div class="panel-body">
-              <p class="panel-label">
-                routes generated
-              </p>
+              <p class="panel-label">routes generated</p>
               <div class="route-row">
                 <span class="i-tabler-file-code"></span>
                 <code>src/pages/index.vue</code>
@@ -109,7 +118,12 @@ function showMessage() {
       </div>
 
       <div class="feature-grid">
-        <n-card v-for="feature in features" :key="feature.title" class="feature-card" :bordered="false">
+        <n-card
+          v-for="feature in features"
+          :key="feature.title"
+          class="feature-card"
+          :bordered="false"
+        >
           <div class="feature-icon">
             <span :class="feature.icon"></span>
           </div>

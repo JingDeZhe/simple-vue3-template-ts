@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useDialog, useLoadingBar, useMessage, useNotification } from 'naive-ui'
+
 const message = useMessage()
 const dialog = useDialog()
 const notification = useNotification()

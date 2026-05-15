@@ -1,7 +1,15 @@
 <script setup lang="ts">
-import { NConfigProvider, NDialogProvider, NGlobalStyle, NLoadingBarProvider, NMessageProvider, NNotificationProvider } from 'naive-ui'
+import {
+  NConfigProvider,
+  NDialogProvider,
+  NGlobalStyle,
+  NLoadingBarProvider,
+  NMessageProvider,
+  NNotificationProvider,
+} from 'naive-ui'
 
 import NaiveApiProvider from './NaiveApiProvider.vue'
+import { useTheme } from '@/composables'
 
 const { naiveTheme } = useTheme()
 </script>

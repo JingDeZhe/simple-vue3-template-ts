@@ -10,7 +10,8 @@ A minimal Vue 3 starter powered by Vite, with TypeScript, Pinia, UnoCSS, Naive U
 - UnoCSS
 - Naive UI
 - Vue Router 5
-- Vitest
+
+This template intentionally keeps imports explicit. It does not include ESLint, component auto-import, or API auto-import plugins.
 
 ## Getting Started
 
@@ -25,7 +26,6 @@ pnpm dev
 pnpm dev
 pnpm build
 pnpm type-check
-pnpm test:unit
 ```
 
 ## Routing

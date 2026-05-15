@@ -1,4 +1,9 @@
-import type { DialogApi, LoadingBarApi, MessageApi, NotificationApi } from 'naive-ui'
+import type {
+  DialogApi,
+  LoadingBarApi,
+  MessageApi,
+  NotificationApi,
+} from 'naive-ui'
 
 declare global {
   interface Window {
